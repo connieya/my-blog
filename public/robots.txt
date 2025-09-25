@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://connieya.xyz
+
+# Sitemaps
+Sitemap: https://connieya.xyz/sitemap.xml
