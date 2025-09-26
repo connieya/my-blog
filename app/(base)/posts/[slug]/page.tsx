@@ -43,7 +43,7 @@ export default async function PostPage({ params: { slug } }: { params: { slug: s
   if (!post) notFound();
 
   const { readingTime, content } = post;
-  const { title, summary, updatedAt } = post.meta;
+  const { title, summary, createdAt } = post.meta;
 
   const { compiledSource } = await serialize(content);
 
@@ -54,7 +54,7 @@ export default async function PostPage({ params: { slug } }: { params: { slug: s
         <div className='flex flex-col items-start gap-1'>
           <Summary>{summary}</Summary>
           <div className='flex items-center justify-start gap-2'>
-            <Time date={updatedAt} />
+            <Time date={createdAt} />
             <Bullet />
             <ReadingTime readingTime={readingTime} />
             <Bullet />

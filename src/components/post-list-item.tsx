@@ -13,7 +13,7 @@ import { cn } from '@/src/utils/class-name';
 export function ListItem({
   item: {
     slug,
-    meta: { title, summary, updatedAt },
+    meta: { title, summary, createdAt },
     readingTime,
   },
   href,
@@ -31,7 +31,7 @@ export function ListItem({
           <div className='flex flex-col items-start gap-1'>
             {summary && <Summary>{summary}</Summary>}
             <div className='flex items-center gap-2'>
-              <Time date={updatedAt} />
+              <Time date={createdAt} />
               <Bullet />
               <ReadingTime readingTime={readingTime} />
               <Bullet />

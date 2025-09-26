@@ -17,12 +17,25 @@ export function getContents<T extends ContentMeta>(contentsPath: string) {
     .map((file) => {
       const { meta, content } = readMDXFile<T>(path.join(contentsPath, file));
       const slug = path.basename(file, path.extname(file));
+       const clean = content
+    .replace(/```[\s\S]*?```/g, ' ')      // fenced code block
+    .replace(/`[^`]*`/g, ' ')             // inline code
+    .replace(/<[^>]+>/g, ' ')             // JSX/MDX 컴포넌트
+    .replace(/\s+/g, ' ')                 // 공백 정리
+    .trim();
+
+
+    // 🟢 wordsPerMinute 조정 (gatsby랑 비슷하게 260~27xw0)
+
+     const minutes = Math.ceil(
+    readingTime(clean, { wordsPerMinute: 260 }).minutes
+  );
 
       return {
         meta,
         content,
         slug,
-        readingTime: readingTime(content).minutes,
+        readingTime: minutes,
       };
     });
 }

@@ -11,11 +11,11 @@ const LINKS = [
     href: 'https://github.com/connieya',
     icon: <GithubIcon size={16} className='text-gray-400' />,
   },
-  // {
-  //   name: 'LinkedIn',
-  //   href: 'https://www.linkedin.com/in/%EC%8A%B9%EC%A4%80-%EC%8B%A0-73602420a/',
-  //   icon: <LinkedinIcon size={16} className='text-gray-400' />,
-  // },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/%EA%B1%B4%ED%9D%AC-%EB%B0%95-6ab959238/',
+    icon: <LinkedinIcon size={16} className='text-gray-400' />,
+  },
 ];
 
 export function Footer() {
